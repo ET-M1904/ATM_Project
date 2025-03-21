@@ -40,7 +40,9 @@ public class CheckingAccount implements HasMenu, Serializable{
 			}
 			else {
 				System.out.println("Invalid input.");
+			}
 		}
+	}
 		
 	public double getBalance(){
 		return this.Balance;
@@ -54,6 +56,40 @@ public class CheckingAccount implements HasMenu, Serializable{
 		System.out.println("Current balance: " + this.getBalance());
 	}
 
+	private double getDouble(){
+		Scanner input = new Scanner(System.in);
+		String sResult = input.nextLine();
+		double result = 0d;
+		try {
+			result = Double.parseDouble(sResult);
+		}
+		catch(Exception e) {
+			System.out.println("Not a legal input. Changing to zero.");
+			result = 0d;
+		}
+		return result;
+	}
+
+	public void makeDeposit(){
+		System.out.print("How much to deposit? ");
+		double deposit = this.getDouble();
+		this.Balance += deposit;
+		System.out.println("New balance: " + this.getBalanceString());
+	}
+
+	public void makeWithdrawal(){
+		System.out.print("How much to withdrawal? ");
+		double withdrawal = this.getDouble();
+		if (withdrawal > this.Balance){
+			System.out.println("Insufficient funds");
+		}
+		else {
+			this.Balance -= withdrawal;
+			System.out.println("New balance: " + this.getBalanceString());
+		}
+	}
+
+}
 
 
 
