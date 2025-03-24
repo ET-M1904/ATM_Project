@@ -19,4 +19,31 @@ public abstract class User implements HasMenu, Serializable{
 
 			if (pinIn.equals(this.PIN)){
 				System.out.println("Login Successful");
+			}
+		}
 
+		return result;
+	}
+
+	public boolean login(String userNameIn, String pinIn){
+		boolean result = false;
+		if (userNameIn.equals(this.userName)){
+			if (pinIn.equals(this.PIN)){
+				result = true;
+			}
+		}
+
+		return result;
+	}
+
+	public void setUserName(String userName){
+		this.userName = userName;
+	}
+
+	public void setPIN(PIN){
+		this.PIN = PIN;
+	}
+
+	public String getPIN(){
+		return String.format(this.PIN);
+	}
