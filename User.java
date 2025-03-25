@@ -47,3 +47,8 @@ public abstract class User implements HasMenu, Serializable{
 	public String getPIN(){
 		return String.format(this.PIN);
 	}
+
+	public abstract string getReport(){
+		return "Admin: " + getUserName() + "\n PIN: " + getPIN();
+	}
+}

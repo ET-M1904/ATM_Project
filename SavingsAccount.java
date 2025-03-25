@@ -11,7 +11,7 @@ public class SavingsAccount extends CheckingAccount{
 	public void calcInterest(){
 		double interestAmount = this.Balance * this.interestRate;
 		this.Balance += interestAmount;
-		System.out.println("New balance: " + this.getBalanceString());
+		System.out.println("New savings account balance: " + this.getBalanceString());
 	}
 
 	public void setInterestRate(double interestRate){
@@ -35,7 +35,7 @@ public class SavingsAccount extends CheckingAccount{
 				keepGoing = false;
 			}
 			else if (repsonse.equals("1")){
-				System.out.println("Saving balance...");
+				System.out.println("Checking savings account balance...");
 				this.checkBalance();
 			}
 			else if (reponse.equals("2")){
@@ -61,7 +61,7 @@ public class SavingsAccount extends CheckingAccount{
 	}
 
 	public void checkBalance(){
-		System.out.println("Current balance: " + this.getBalance());
+		System.out.println("Current savings account balance: " + this.getBalance());
 	}
 
 	private double getDouble(){
@@ -82,7 +82,7 @@ public class SavingsAccount extends CheckingAccount{
 		System.out.print("How much to deposit? ");
 		double deposit = this.getDouble();
 		this.Balance += deposit;
-		System.out.println("New balance: " + this.getBalanceString());
+		System.out.println("New savings account balance: " + this.getBalanceString());
 	}
 	public void makeWithdrawal(){
 		System.out.print("How much to withdrawal? ");
@@ -92,9 +92,8 @@ public class SavingsAccount extends CheckingAccount{
 		}
 		else {
 			this.Balance -= withdrawal;
-			System.out.println("New Balance: " + this.getBalanceString());
+			System.out.println("New savings account balance: " + this.getBalanceString());
 		}
 	}
 }
-
 
